@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verano Estate - Your Digital Paradise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
+
+        :root {
+            --brand-teal: #003C3C;
+            --brand-bg: #FBF7F0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--brand-bg);
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--brand-teal);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 60, 60, 0.9) 0%, rgba(0, 60, 60, 0.7) 100%),
+                url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1920') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--brand-teal);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #002a2a;
+            transform: scale(1.05);
+        }
+
+        .lang-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .lang-btn {
+            border: 1px solid var(--brand-teal);
+            color: var(--brand-teal);
+            background: transparent;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: #e5e7eb;
+        }
+
+        .lang-btn.active {
+            background-color: var(--brand-teal);
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            border-radius: 15px;
+            object-fit: cover;
+            width: 100%;
+            height: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <div class="lang-container">
+        <button onclick="setLanguage('es')" id="btn-es" class="lang-btn active">🇪🇸 ES</button>
+        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn">🇺🇸 EN</button>
+        <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn">🇫🇷 FR</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6" style="color: white;" data-i18n="heroTitle">VERANO ESTATE</h1>
+            <p class="text-xl md:text-2xl mb-4 font-light" data-i18n="heroSubtitle">Tu Paraíso Digital</p>
+            <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto" data-i18n="heroDesc">
+                Descubre la experiencia definitiva de lujo y confort en nuestro exclusivo resort
+            </p>
+            <a href="guest-form.html" class="btn-primary">
+                <span data-i18n="btnReserve">Reserva Ahora</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="aboutTitle">Bienvenido a Tu Mundo Digital</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="aboutDesc">
+                    Verano Estate es más que un resort, es tu escape perfecto. Con 11 habitaciones de lujo,
+                    servicios excepcionales y experiencias inolvidables, creamos momentos mágicos para ti y tus seres queridos.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card text-center">
+                    <div class="text-5xl mb-4">🏖️</div>
+                    <h3 class="text-2xl font-bold mb-3" data-i18n="feature1Title">Ubicación Premium</h3>
+                    <p class="text-gray-600" data-i18n="feature1Desc">
+                        Acceso directo a playas privadas y vistas espectaculares al océano
+                    </p>
+                </div>
+
+                <div class="feature-card text-center">
+                    <div class="text-5xl mb-4">👨‍🍳</div>
+                    <h3 class="text-2xl font-bold mb-3" data-i18n="feature2Title">Chef Privado</h3>
+                    <p class="text-gray-600" data-i18n="feature2Desc">
+                        Experiencias culinarias personalizadas por Chef Franko
+                    </p>
+                </div>
+
+                <div class="feature-card text-center">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="text-2xl font-bold mb-3" data-i18n="feature3Title">Servicios VIP</h3>
+                    <p class="text-gray-600" data-i18n="feature3Desc">
+                        Transporte, actividades y atención personalizada 24/7
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-i18n="amenitiesTitle">Nuestras Comodidades</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">🏊</div>
+                    <p class="font-semibold" data-i18n="amenity1">Piscina Infinity</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">🍽️</div>
+                    <p class="font-semibold" data-i18n="amenity2">Restaurante Gourmet</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">💆</div>
+                    <p class="font-semibold" data-i18n="amenity3">Spa & Wellness</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">🎵</div>
+                    <p class="font-semibold" data-i18n="amenity4">Entretenimiento</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">🚗</div>
+                    <p class="font-semibold" data-i18n="amenity5">Transporte VIP</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">🧘</div>
+                    <p class="font-semibold" data-i18n="amenity6">Clases de Yoga</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">🛥️</div>
+                    <p class="font-semibold" data-i18n="amenity7">Tours en Yate</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl mb-3">📶</div>
+                    <p class="font-semibold" data-i18n="amenity8">WiFi Alta Velocidad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-i18n="galleryTitle">Galería</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800" alt="Pool View" class="gallery-img">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800" alt="Bedroom" class="gallery-img">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800" alt="Ocean View" class="gallery-img">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="Dining" class="gallery-img">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800" alt="Living Room" class="gallery-img">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800" alt="Kitchen" class="gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-[var(--brand-teal)] text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="ctaTitle">¿Listo para tu Aventura?</h2>
+            <p class="text-xl mb-8 opacity-90" data-i18n="ctaDesc">
+                Completa nuestro formulario de huéspedes y comienza a planear tu escapada perfecta
+            </p>
+            <a href="guest-form.html" class="bg-white text-[var(--brand-teal)] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition inline-block">
+                <span data-i18n="ctaButton">Completar Formulario</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#002a2a] text-white py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="font-bold text-2xl tracking-wide mb-4">VERANO ESTATE</p>
+            <p class="text-gray-300 mb-2">by Chef Franko</p>
+            <div class="text-gray-400 space-y-1 mt-4">
+                <p>📞 +52 322 160 6843</p>
+                <p>📧 franko@veranostate.com</p>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6">
+                <p class="text-sm text-gray-500">&copy; 2025 VERANO ESTATE. <span data-i18n="footerRights">Todos los derechos reservados.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            es: {
+                heroTitle: "VERANO ESTATE",
+                heroSubtitle: "Tu Paraíso Digital",
+                heroDesc: "Descubre la experiencia definitiva de lujo y confort en nuestro exclusivo resort",
+                btnReserve: "Reserva Ahora",
+                aboutTitle: "Bienvenido a Tu Mundo Digital",
+                aboutDesc: "Verano Estate es más que un resort, es tu escape perfecto. Con 11 habitaciones de lujo, servicios excepcionales y experiencias inolvidables, creamos momentos mágicos para ti y tus seres queridos.",
+                feature1Title: "Ubicación Premium",
+                feature1Desc: "Acceso directo a playas privadas y vistas espectaculares al océano",
+                feature2Title: "Chef Privado",
+                feature2Desc: "Experiencias culinarias personalizadas por Chef Franko",
+                feature3Title: "Servicios VIP",
+                feature3Desc: "Transporte, actividades y atención personalizada 24/7",
+                amenitiesTitle: "Nuestras Comodidades",
+                amenity1: "Piscina Infinity",
+                amenity2: "Restaurante Gourmet",
+                amenity3: "Spa & Wellness",
+                amenity4: "Entretenimiento",
+                amenity5: "Transporte VIP",
+                amenity6: "Clases de Yoga",
+                amenity7: "Tours en Yate",
+                amenity8: "WiFi Alta Velocidad",
+                galleryTitle: "Galería",
+                ctaTitle: "¿Listo para tu Aventura?",
+                ctaDesc: "Completa nuestro formulario de huéspedes y comienza a planear tu escapada perfecta",
+                ctaButton: "Completar Formulario",
+                footerRights: "Todos los derechos reservados."
+            },
+            en: {
+                heroTitle: "VERANO ESTATE",
+                heroSubtitle: "Your Digital Paradise",
+                heroDesc: "Discover the ultimate luxury and comfort experience at our exclusive resort",
+                btnReserve: "Book Now",
+                aboutTitle: "Welcome to Your Digital World",
+                aboutDesc: "Verano Estate is more than a resort, it's your perfect escape. With 11 luxury rooms, exceptional services, and unforgettable experiences, we create magical moments for you and your loved ones.",
+                feature1Title: "Premium Location",
+                feature1Desc: "Direct access to private beaches and spectacular ocean views",
+                feature2Title: "Private Chef",
+                feature2Desc: "Personalized culinary experiences by Chef Franko",
+                feature3Title: "VIP Services",
+                feature3Desc: "Transportation, activities and personalized 24/7 attention",
+                amenitiesTitle: "Our Amenities",
+                amenity1: "Infinity Pool",
+                amenity2: "Gourmet Restaurant",
+                amenity3: "Spa & Wellness",
+                amenity4: "Entertainment",
+                amenity5: "VIP Transportation",
+                amenity6: "Yoga Classes",
+                amenity7: "Yacht Tours",
+                amenity8: "High-Speed WiFi",
+                galleryTitle: "Gallery",
+                ctaTitle: "Ready for Your Adventure?",
+                ctaDesc: "Complete our guest form and start planning your perfect getaway",
+                ctaButton: "Complete Form",
+                footerRights: "All rights reserved."
+            },
+            fr: {
+                heroTitle: "VERANO ESTATE",
+                heroSubtitle: "Votre Paradis Digital",
+                heroDesc: "Découvrez l'expérience ultime de luxe et confort dans notre resort exclusif",
+                btnReserve: "Réserver Maintenant",
+                aboutTitle: "Bienvenue dans Votre Monde Digital",
+                aboutDesc: "Verano Estate est plus qu'un resort, c'est votre échappatoire parfaite. Avec 11 chambres de luxe, des services exceptionnels et des expériences inoubliables, nous créons des moments magiques pour vous et vos proches.",
+                feature1Title: "Emplacement Premium",
+                feature1Desc: "Accès direct aux plages privées et vues spectaculaires sur l'océan",
+                feature2Title: "Chef Privé",
+                feature2Desc: "Expériences culinaires personnalisées par Chef Franko",
+                feature3Title: "Services VIP",
+                feature3Desc: "Transport, activités et attention personnalisée 24/7",
+                amenitiesTitle: "Nos Commodités",
+                amenity1: "Piscine Infinity",
+                amenity2: "Restaurant Gourmet",
+                amenity3: "Spa & Wellness",
+                amenity4: "Divertissement",
+                amenity5: "Transport VIP",
+                amenity6: "Cours de Yoga",
+                amenity7: "Tours en Yacht",
+                amenity8: "WiFi Haute Vitesse",
+                galleryTitle: "Galerie",
+                ctaTitle: "Prêt pour Votre Aventure?",
+                ctaDesc: "Complétez notre formulaire d'invités et commencez à planifier votre escapade parfaite",
+                ctaButton: "Compléter le Formulaire",
+                footerRights: "Tous droits réservés."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
