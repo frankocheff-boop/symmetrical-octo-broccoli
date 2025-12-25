@@ -131,6 +131,9 @@
     </div>
 
     <header class="text-center py-10 px-4">
+        <a href="index.html" class="inline-block mb-4 text-[var(--brand-teal)] hover:underline">
+            ← <span data-i18n="backHome">Volver al Inicio</span>
+        </a>
         <p class="text-xl sm:text-2xl tracking-widest text-[var(--brand-teal)] mt-4 font-semibold">VERANO ESTATE</p>
         <h1 class="text-3xl sm:text-4xl mt-2" data-i18n="formTitle">Formulario de Información de Huéspedes</h1>
         <p class="text-sm text-gray-500 mt-2">by Chef Franko</p>
@@ -431,13 +434,13 @@
 
     <footer class="bg-[var(--brand-teal)] text-white py-8 mt-12">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <p class="font-bold text-lg tracking-wide">VERANO STATE by chef franko</p>
+            <p class="font-bold text-lg tracking-wide">VERANO ESTATE by chef franko</p>
             <div class="text-gray-300 space-y-1 mt-4">
                 <p>+52 322 160 6843</p>
-                <p>franko@veranostate.com</p>
+                <p>franko@veranoestate.com</p>
             </div>
             <div class="mt-6 border-t border-gray-700 pt-6">
-                <p class="text-sm text-gray-400">&copy; 2025 VERANO STATE.</p>
+                <p class="text-sm text-gray-400">&copy; 2025 VERANO ESTATE.</p>
             </div>
         </div>
     </footer>
@@ -446,6 +449,7 @@
         // --- 1. CONFIGURACIÓN DE TRADUCCIONES ---
         const translations = {
             es: {
+                backHome: "Volver al Inicio",
                 formTitle: "Formulario de Información de Huéspedes",
                 basicInfo: "Información Básica",
                 groupName: "Nombre del Grupo",
@@ -487,6 +491,7 @@
                 btnWhatsapp: "Enviar por WhatsApp"
             },
             en: {
+                backHome: "Back to Home",
                 formTitle: "Guest Information Form",
                 basicInfo: "Basic Information",
                 groupName: "Group Name",
@@ -528,6 +533,7 @@
                 btnWhatsapp: "Send via WhatsApp"
             },
             fr: {
+                backHome: "Retour à l'Accueil",
                 formTitle: "Formulaire d'Information des Invités",
                 basicInfo: "Informations de Base",
                 groupName: "Nom du Groupe",
