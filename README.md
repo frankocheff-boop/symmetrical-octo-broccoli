@@ -38,7 +38,7 @@ Built with:
 ## 📞 Contact
 
 - Phone: +52 322 160 6843
-- Email: franko@veranostate.com
+- Email: franko@veranoestate.com
 
 ---
 
